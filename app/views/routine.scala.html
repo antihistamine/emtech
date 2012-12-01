@@ -1,0 +1,42 @@
+@(routine: models.Routine, buildingBlocks: List[BuildingBlock])
+
+
+
+@import helper.twitterBootstrap._
+
+@main("Routine") {
+
+
+
+<video width="640" height="360" controls="controls">
+    <source src="file://c:/play-2.0.1/emtech/public/videos/elephants-dream.webm" type='video/webm'>
+    <source src="@routes.Assets.at("videos/Pentagon_News_Sample.ogg")" type='video/ogg'>
+    <source src="http://upload.wikimedia.org/wikipedia/commons/9/9b/Pentagon_News_Sample.ogg" type='video/ogg' >
+    <source src="http://www.archive.org/download/VoyagetothePlanetofPrehistoricWomen/VoyagetothePlanetofPrehistoricWomen.ogg" type='video/ogg'>
+</video>
+
+<p></p>
+
+<h2>Building Blocks: @routine.buildingBlockNames</h2>
+<h2>Suggestion: @routine.suggestion</h2>
+<h2>Homework: @routine.homework</h2>
+
+<h1>Blocks: </h1>
+
+@for(b <- buildingBlocks) {
+    <h2>Name: @b.name</h2>
+    <h3>Description: @b.description</h3>
+    <h3>VideoURI: @b.videoURI</h3>
+
+    <h4>@b.name Concepts</h4>
+
+    @for(c <- b.concepts) {
+        <li>@c.conceptName</li>
+        <li>@c.conceptText</li>
+        <li>@c.conceptVisualImageURI</li>
+    }
+}
+
+}
+
+

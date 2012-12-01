@@ -1,0 +1,13 @@
+name: Walk
+description: C'mon really?  Don't you know? walk!
+videoURI: http://www.tamu.edu
+concepts:
+  - conceptName: feet
+    conceptText: Use them, but slowly
+    conceptVisualImageURI: http://www.yahoo.com
+  - conceptName: hands
+    conceptText: don't use them, but wave hi
+    conceptVisualImageURI: http://www.google.com
+
+
+

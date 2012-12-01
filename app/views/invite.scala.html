@@ -1,0 +1,25 @@
+
+@(myForm: Form[User])
+
+@import helper.twitterBootstrap._
+
+@main("Register") {
+
+
+	@helper.form(action = routes.Application.processRegistration()) {
+		@helper.inputText(myForm("email"))
+
+		@helper.inputPassword(myForm("password"))
+
+		<button type = "submit" class='.btn'> Register </button>
+
+	}
+
+	@helper.form(action = routes.Application.processLogin()) {
+		@helper.inputText(myForm("email"))
+
+		@helper.inputPassword(myForm("password"))
+
+		<button type = "submit" class='.btn'> Login </button>
+	}
+}

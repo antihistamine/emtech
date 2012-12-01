@@ -1,0 +1,17 @@
+@(feelingForm: Form[Feeling])
+
+@import helper.twitterBootstrap._
+@import helper._
+
+@main("How Are You Feeling") {
+    @helper.form(action = routes.Application.processHowFeeling()) {
+        @inputRadioGroup(
+            feelingForm("feeling"),
+            options = options("Tight"->"Tight","Tired"->"Tight","Sore"->"Sore", "Fit"->"Fit"),
+            '_label -> "How are you feeling today?",
+            '_error -> feelingForm("Whoops").error.map(_.withMessage("select feeling"))
+        )
+        <button type = "submit" class='.btn'> Next >> </button>
+    }
+
+}

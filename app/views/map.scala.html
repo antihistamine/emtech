@@ -1,0 +1,29 @@
+@(user: User, lastFeeling: Feeling)
+
+@import helper.twitterBootstrap._
+
+@main("Map") {
+    <h1>@user.email</h1>
+    <h2>Activity Level : @user.activityLevel</h2>
+    <h3>Skill Level : @user.skillLevel</h3>
+    <h3>Last Feeling :
+        @if(lastFeeling == null) {
+        } else {
+            @lastFeeling.feeling
+        }
+
+        at
+
+        @if(lastFeeling == null) {
+        } else {
+            @lastFeeling.checkInDateTime
+        }
+
+    </h3>
+
+<p>
+    <a class="btn btn-primary btn-large" href=@routes.Application.howFeeling()>Next >> &raquo;</a>
+</p>
+}
+
+
